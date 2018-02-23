@@ -24,7 +24,7 @@ connection.connect(function(error) {
 function displayTable(result) {
     var table = new Table({
         head: ['Item ID', 'Product Name', 'Department', 'Price', 'Stock']
-        , colWidths: [10, 45, 40, 8, 8]
+        , colWidths: [12, 20, 20, 10, 5]
     });
     for (var i = 0; i < result.length; i++) {
         table.push([result[i].item_id, result[i].product_name, result[i].department_name, result[i].price, result[i].stock_quantity]);
@@ -50,8 +50,8 @@ function start() {
             message: 'How many you would like to purchase?'
         }]).then(function(answer) {
             console.log(answer);
-            var itemID = answer.item_id
-            console.log(itemID);
+            var item_id = answer.item_id
+            console.log(item_id);
             var itemChoice = result[item_id-1];
             console.log(itemChoice);
             var newStock = itemChoice.stock_quantity - answer.stock_quantity;
