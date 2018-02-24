@@ -46,7 +46,7 @@ function start() {
         },
         {
             name: 'quantity',
-            type: 'integer',
+            type: 'input',
             message: 'How many you would like to purchase?'
         }]).then(function(answer) {
             console.log(answer);
@@ -59,11 +59,11 @@ function start() {
                     }
                 }
             } 
-            //var itemChoice = result[item_id];
-            console.log(choiceItem());
+            var itemChoice = result[item_id];
+            var item = choiceItem();
             var stock_quantity = parseInt(answer.quantity);   
-            var newStock = parseInt(choiceItem.stock_quantity) - parseInt(answer.quantity);
-            console.log("quantity:", newStock);
+            var newStock = parseInt(item.stock_quantity) - parseInt(answer.quantity);
+            console.log(newStock);
             if (newStock >= 0) {
                 connection.query('UPDATE products SET ? WHERE item_id = ?', [{stock_quantity: newStock}, item_id]);
                 start();
