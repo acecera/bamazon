@@ -49,19 +49,19 @@ function start() {
             type: 'integer',
             message: 'How many you would like to purchase?'
         }]).then(function(answer) {
-            console.log("answer: ",answer);
+            console.log(answer);
             var item_id = parseInt(answer.item)
-            console.log("item_id:",item_id);
-            var stock_quantity = parseInt(answer.quantity);
+            console.log(item_id);
             var choiceItem = function () {
                 for (var i = 0; i < result.length; i++) {
                     if (result[i].item_id === item_id) {
                         return result[i];
                     }
                 }
-            }    
+            } 
             //var itemChoice = result[item_id];
             console.log(choiceItem());
+            var stock_quantity = parseInt(answer.quantity);   
             var newStock = parseInt(choiceItem.stock_quantity) - parseInt(answer.quantity);
             console.log("quantity:", newStock);
             if (newStock >= 0) {
