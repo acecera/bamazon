@@ -45,16 +45,25 @@ function start() {
             message: 'Which is the item id of the product you would like to purchase?'
         },
         {
-            name: 'item',
-            type: 'input',
+            name: 'quantity',
+            type: 'integer',
             message: 'How many you would like to purchase?'
         }]).then(function(answer) {
-            console.log(answer);
-            var item_id = answer.item_id
-            console.log(item_id);
-            var itemChoice = result[item_id-1];
-            console.log(itemChoice);
-            var newStock = itemChoice.stock_quantity - answer.stock_quantity;
+            console.log("answer: ",answer);
+            var item_id = parseInt(answer.item)
+            console.log("item_id:",item_id);
+            var stock_quantity = parseInt(answer.quantity);
+            var choiceItem = function () {
+                for (var i = 0; i < result.length; i++) {
+                    if (result[i].item_id === item_id) {
+                        return result[i];
+                    }
+                }
+            }    
+            //var itemChoice = result[item_id];
+            console.log(choiceItem());
+            var newStock = parseInt(choiceItem.stock_quantity) - parseInt(answer.quantity);
+            console.log("quantity:", newStock);
             if (newStock >= 0) {
                 connection.query('UPDATE products SET ? WHERE item_id = ?', [{stock_quantity: newStock}, item_id]);
                 start();
