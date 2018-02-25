@@ -39,4 +39,6 @@ function managerStart() {
         for (var i = 0; i < result.length; i++) {
             choiceArray.push(result[i].product_name);
         }
-        in
+        inquirer.prompt({
+            name: "menu"
+        })
