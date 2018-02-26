@@ -24,7 +24,7 @@ connection.connect(function(error) {
 function displayTable(result) {
     var table = new Table({
         head: ['Item ID', 'Product Name', 'Department', 'Price', 'Stock']
-        , colWidths: [12, 20, 20, 10, 5]
+        , colWidths: [12, 41, 20, 10, 5]
     });
     for (var i = 0; i < result.length; i++) {
         table.push([result[i].item_id, result[i].product_name, result[i].department_name, result[i].price, result[i].stock_quantity]);
