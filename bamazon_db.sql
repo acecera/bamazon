@@ -1,4 +1,5 @@
 DROP DATABASE IF EXISTS bamazon_db;
+
 CREATE DATABASE bamazon_db;
 
 USE bamazon_db;
@@ -43,3 +44,5 @@ VALUES (1518996893, "Burton Custom X Snowbaord", "Sports & Outdoor", 749.95, 10)
 
 INSERT INTO products (item_id, product_name, department_name, price, stock_quantity)
 VALUES (1518996891, "Burton Custom Snowboard", "Sports & Outdoor", 599.95, 15);
+
+SELECT * FROM bamazon_db.products;
