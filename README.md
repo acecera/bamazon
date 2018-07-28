@@ -6,12 +6,12 @@ The application will take orders and update the stock quantity of that order.
 
 To initialize the application type in node bamazonCustomer in the command line. It will ask you two questions;
 
-![Initializing App.] (/images/Bamazon.Initial.png?raw=true)
+![Initializing App.] (https://www.github.com/acecera/Constructor-Hangman/images/Bamazon.Initial.png)
 
 1. What is the item ID or the item you wish to purchase.
 2. How many.
 
-![Input Order] (/images/Bamazon.Input.png?raw=true)
+![Input Order] (https://www.github.com/acecera/Constructor-Hangman/images/Bamazon.Input.png)
 
-![Updated table] (/images/Bamazon.Update.png?raw=true)
+![Updated table] (https://www.github.com/acecera/Constructor-Hangman/images/Bamazon.Update.png)
 
